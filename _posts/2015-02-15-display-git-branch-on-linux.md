@@ -12,6 +12,7 @@ tags: git
 通过修改 ~/.bashrc 显示git当前分支
 
 
+
 在~/.bashrc 末尾添加：
 ```
 function git-branch-name {
