@@ -2,8 +2,8 @@
 layout: post
 title:  "流畅的Python（Fluent Python)"
 date:   2015-02-16 20:14:54
-categories: Linux
-tags: md5sum
+categories: python
+tags: 阅读笔记
 ---
 
 * content
