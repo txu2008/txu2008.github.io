@@ -32,11 +32,13 @@ tags: md5sum
 列表推导
 列表推导是构建列表的快捷方式, 可读性更好且效率更高.
 例如, 把一个字符串变成unicode的码位列表的例子, 一般:
-Python
-1234 symbols='$¢£¥€¤'codes=[]forsymbolinsymbols:codes.append(ord(symbol))
+```
+symbols='$¢£¥€¤'codes=[]forsymbolinsymbols:codes.append(ord(symbol))
+```
 使用列表推导:
-Python
-12 symbols='$¢£¥€¤'codes=[ord(symbol)forsymbolinsymbols]
+```
+symbols='$¢£¥€¤'codes=[ord(symbol)forsymbolinsymbols]
+```
 能用列表推导来创建一个列表, 尽量使用推导, 并且保持它简短.
 笛卡尔积与生成器表达式
 生成器表达式是能逐个产出元素, 节省内存. 例如:
@@ -48,13 +50,24 @@ Python
 实例中列表元素比较少, 如果换成两个各有1000个元素的列表, 显然这样组合的笛卡尔积是一个含有100万元素的列表, 内存将会占用很大, 而是用生成器表达式就可以帮忙省掉for循环的开销.
 具名元组
 元组经常被作为 不可变列表 的代表. 经常只要数字索引获取元素, 但其实它还可以给元素命名:
-Python
-123456789101112 >>>fromcollectionsimportnamedtuple>>>City=namedtuple('City','name country population coordinates')>>>tokyo=City('Tokyo','JP',36.933,(35.689722,139.691667))>>>tokyoCity(name='Tokyo',country='JP',population=36.933,coordinates=(35.689722,139.691667))>>>tokyo.population36.933>>>tokyo.coordinates(35.689722,139.691667)>>>tokyo[1]'JP'
+```
+>>>fromcollectionsimportnamedtuple
+>>>City=namedtuple('City','name country population coordinates')
+>>>tokyo=City('Tokyo','JP',36.933,(35.689722,139.691667))
+>>>tokyoCity(name='Tokyo',country='JP',population=36.933,coordinates=(35.689722,139.691667))
+>>>tokyo.population36.933
+>>>tokyo.coordinates(35.689722,139.691667)
+>>>tokyo[1]'JP'
+```
 切片
 列表中是以0作为第一个元素的下标, 切片可以根据下标提取某一个片段.
 用 s[a:b:c] 的形式对 s 在 a 和 b 之间以 c 为间隔取值。c 的值还可以为负, 负值意味着反向取值.
-Python
-1234567 >>>s='bicycle'>>>s[::3]'bye'>>>s[::-1]'elcycib'>>>s[::-2]'eccb'
+```
+>>>s='bicycle'
+>>>s[::3]'bye'
+>>>s[::-1]'elcycib'
+>>>s[::-2]'eccb'
+```
 
 # 第三章: 字典和集合
 dict 类型不但在各种程序里广泛使用, 它也是 Python 语言的基石. 正是因为 dict 类型的重要, Python 对其的实现做了高度的优化, 其中最重要的原因就是背后的「散列表」 set（集合）和dict一样, 其实现基础也是依赖于散列表.
