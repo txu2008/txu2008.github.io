@@ -7,7 +7,7 @@
 
 # Site settings
 title: 徐涛的技术专栏
-brief-intro: Python Coder, Storage Stress/Performance Test, System performance tuning
+brief-intro: Software QA engineer - Python, Automation, Storage, Stress, Performance.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://txu2008.github.io" # the base hostname & protocol for your site
 
