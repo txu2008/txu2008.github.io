@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "RSA ssh key login 互信"
+title:  "linux 常用命令"
 date:   2014-04-08 16:24:33
 categories: Linux
 tags: cmd
