@@ -13,9 +13,9 @@ linux 常用命令
 
 
 
-#### 1、cd/pwd/mkdir/rmdir/rm 命令
+##### 1、cd/pwd/mkdir/rmdir/rm
 
-#### 2、ls命令
+##### 2、ls
 ```
 -l ：列出长数据串，包含文件的属性与权限数据等  
 -a ：列出全部的文件，连同隐藏文件（开头为.的文件）一起列出来（常用）  
@@ -28,7 +28,7 @@ ls -lR #以长数据串的形式列出当前目录下的所有文件
 ls |wc -l 统计行数（-w 统计单词数，-m统计字符数）
 ```
 
-#### 3、grep命令
+##### 3、grep
 ```
 该命令常用于分析一行的信息，若当中有我们所需要的信息，就将该行显示出来，该命令通常与管道命令一起使用，用于对一些命令的输出进行筛选加工等等，它的简单语法为
 grep [-acinv] [--color=auto] '查找字符串' filename  
@@ -44,7 +44,7 @@ grep --color=auto 'MANPATH' /etc/man.config
 ls -l | grep -i file  
 ```
 
-#### 4、find命令
+##### 4、find
 ```
 find是一个基于查找的功能非常强大的命令，相对而言，它的使用也相对较为复杂，参数也比较多，所以在这里将给把它们分类列出，它的基本语法如下：
 find [PATH] [option] [action]  
@@ -79,7 +79,7 @@ find . -perm 0755 # 查找当前目录中文件权限的0755的文件
 find . -size +12k # 查找当前目录中大于12KB的文件，注意c表示byte  
 ```
 
-#### 5、cp命令
+##### 5、cp
 ```
 该命令用于复制文件，copy之意，它还可以把多个文件一次性地复制到一个目录下，它的常用参数如下：
 -a ：将文件的特性一起复制  
@@ -92,7 +92,7 @@ cp -a file1 file2 #连同文件的所有特性把文件file1复制成文件file2
 cp file1 file2 file3 dir #把文件file1、file2、file3复制到目录dir中  
 ```
 
-#### 6、mv命令
+##### 6、mv
 ```
 该命令用于移动文件、目录或更名，move之意，它的常用参数如下：
 -f ：force强制的意思，如果目标文件已经存在，不会询问而直接覆盖  
@@ -105,7 +105,7 @@ mv file1 file2 file3 dir # 把文件file1、file2、file3移动到目录dir中
 mv file1 file2 # 把文件file1重命名为file2  
 ```
 
-#### 7、rm命令
+##### 7、rm
 ```
 该命令用于删除文件或目录，remove之间，它的常用参数如下：
 -f ：就是force的意思，忽略不存在的文件，不会出现警告消息  
@@ -116,7 +116,7 @@ rm -i file # 删除文件file，在删除之前会询问是否进行该操作
 rm -fr dir # 强制删除目录dir中的所有文件  
 ```
 
-#### 8、ps命令
+##### 8、ps
 ```
 该命令用于将某个时间点的进程运行情况选取下来并输出，process之意，它的常用参数如下：
 -A ：所有的进程均显示出来  
@@ -131,7 +131,7 @@ ps -lA # 查看系统所有的进程数据
 ps axjf # 查看连同一部分进程树状态 
 ```
  
-#### 9、kill命令
+##### 9、kill
 ```
 该命令用于向某个工作（%jobnumber）或者是某个PID（数字）传送一个信号，它通常与ps和jobs命令一起使用，它的基本语法如下：
 kill -signal PID  
@@ -149,7 +149,7 @@ kill -SIGTERM %1
 kill -SIGHUP PID  
 ```
 
-#### 10、killall命令
+##### 10、killall
 ```
 该命令用于向一个命令启动的进程发送一个信号，它的一般语法如下：
 killall [-iIe] [command name]  
@@ -161,7 +161,7 @@ killall [-iIe] [command name]
 killall -SIGHUP syslogd # 重新启动syslogd 
 ```
  
-#### 11、file命令
+##### 11、file
 ```
 该命令用于判断接在file命令后的文件的基本数据，因为在Linux下文件的类型并不是以后缀为分的，所以这个命令对我们来说就很有用了，它的用法非常简单，基本语法如下：
 file filename  
@@ -169,7 +169,7 @@ file filename
 file ./test  
 ```
 
-#### 12、tar命令
+##### 12、tar
 ```
 该命令用于对文件进行打包，默认情况并不会压缩，如果指定了相应的参数，它还会调用相应的压缩程序（如gzip和bzip等）进行压缩和解压。它的常用参数如下：
 -c ：新建打包文件  
@@ -187,13 +187,13 @@ file ./test
 注：文件名并不定要以后缀tar.bz2结尾，这里主要是为了说明使用的压缩程序为bzip2
 ```
 
-#### 13、cat命令
+##### 13、cat
 ```
 该命令用于查看文本文件的内容，后接要查看的文件名，通常可用管道与more和less一起使用，从而可以一页页地查看数据。例如：
 cat text | less # 查看text文件中的内容  
 # 注：这条命令也可以使用less text来代替  
 ```
-#### 14、chgrp命令
+##### 14、chgrp
 ```
 该命令用于改变文件所属用户组，它的使用非常简单，它的基本用法如下：
 chgrp [-R] dirname/filename  
@@ -201,12 +201,12 @@ chgrp [-R] dirname/filename
 # 例如：  
 chgrp users -R ./dir # 递归地把dir目录下中的所有文件和子目录下所有文件的用户组修改为users  
 ```
-#### 15、chown命令
+##### 15、chown
 ```
 该命令用于改变文件的所有者，与chgrp命令的使用方法相同，只是修改的文件属性不同，不再详述。
 ```
 
-#### 16、chmod命令
+##### 16、chmod
 ```
 该命令用于改变文件的权限，一般的用法如下：
 chmod [-R] xyz 文件或目录  
@@ -218,12 +218,12 @@ chmod 0755 file # 把file的文件权限改变为-rxwr-xr-x
 chmod g+w file # 向file的文件权限中加入用户组可写权限 
 ```
  
-#### 18、vim命令
+##### 18、vim
 ```
 该命令主要用于文本编辑，它接一个或多个文件名作为参数，如果文件存在就打开，如果文件不存在就以该文件名创建一个文件。vim是一个非常好用的文本编辑器，它里面有很多非常好用的命令，在这里不再多说。你可以从这里下载vim常用操作的详细说明。
 ```
 
-#### 19、gcc命令
+##### 19、gcc
 ```
 对于一个用Linux开发C程序的人来说，这个命令就非常重要了，它用于把C语言的源程序文件，编译成可执行程序，由于g++的很多参数跟它非常相似，所以这里只介绍gcc的参数，它的常用参数如下：
 -o ：output之意，用于指定生成一个可执行文件的文件名  
@@ -242,7 +242,7 @@ gcc -o test test.c -lm -std=c99
 gcc -S test.c  
 ```
 
-#### 20、time命令
+##### 20、time
 ```
 该命令用于测算一个命令（即程序）的执行时间。它的使用非常简单，就像平时输入命令一样，不过在命令的前面加入一个time即可，例如：
 time ./process  
@@ -254,49 +254,49 @@ real：实际时间，从command命令行开始执行到运行终止的消逝时
 注：用户CPU时间和系统CPU时间之和为CPU时间，即命令占用CPU执行的时间总和。实际时间要大于CPU时间，因为Linux是多任务操作系统，往往在执行一条命令时，系统还要处理其它任务。另一个需要注意的问题是即使每次执行相同命令，但所花费的时间也是不一样，其花费时间是与系统运行相关的。
 ```
 
-#### 21、more/less/cat/head/tail 命令
+##### 21、more/less/cat/head/tail
 
-#### 22、which/whereis/find/locate 命令
+##### 22、which/whereis/find/locate
 
-#### 23、useradd/userdel/groupadd/groupdel 命令
+##### 23、useradd/userdel/groupadd/groupdel
 
-#### 24、df/du 命令
+##### 24、df/du
 ```
    1. -s
    2. -b/-k/-m
 ```
 
-#### 25、dstat -cmndlt
+##### 25、dstat -cmndlt
 
-#### 26、iostat -xcmdt 1 |tee iostat.log
+##### 26、iostat -xcmdt 1 |tee iostat.log
 
-#### 27、top
+##### 27、top
 
-#### 28、vmstat
+##### 28、vmstat
 
-#### 29、netstat
+##### 29、netstat
 
-#### 30、ps -ef
+##### 30、ps -ef
 
-#### 31、free 
+##### 31、free 
 ```
    1.-t
    2. -b/k/m
 ```     
-#### 32、ping
+##### 32、ping
 
-#### 33、ifconfig
+##### 33、ifconfig
 
-#### 34、ifup/ifdown eth0
+##### 34、ifup/ifdown eth0
 
-#### 35、iptables
+##### 35、iptables
 ```
   1.-nvL 查看filter表的所有规则
   2.-t nat -nvL 查看nat表规则
   3.-F 删除规则
 ```
 
-#### 36、shoutdown
+##### 36、shoutdown
 ```
   1. -t 数字：指定多少秒关机
   2. -r 时间：指定时间关机后立即重新开机
@@ -304,4 +304,4 @@ real：实际时间，从command命令行开始执行到运行终止的消逝时
   4. -c 取消shutdown
 ```
 
-#### 7、reboot
+##### 7、reboot
